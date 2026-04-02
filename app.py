@@ -135,11 +135,11 @@ if dashboard_mode == "교사용 대시보드":
         cdf = all_students[all_students["class_id"] == cid]
         compare_data.append({
             "반": CLASS_NAMES[cid],
-            "실행블록": cdf["play_total"].mean(),
-            "반복블록": cdf["loop_total"].mean(),
-            "조건블록": cdf["cond_total"].mean(),
-            "연산블록": cdf["op_total"].mean(),
-            "스타블록": cdf["func_total"].mean(),
+            "실행": cdf["play_total"].mean(),
+            "반복": cdf["loop_total"].mean(),
+            "조건": cdf["cond_total"].mean(),
+            "연산": cdf["op_total"].mean(),
+            "스타": cdf["func_total"].mean(),
         })
     compare_df = pd.DataFrame(compare_data)
 
