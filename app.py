@@ -118,7 +118,7 @@ if dashboard_mode == "교사용 대시보드":
     })
 
     fig_chapter = go.Figure()
-    for col_name, color in [("기초 점수 (사용 여부)", "#7F77DD"), ("중급 점수 (구조/다양성)", "#1D9E75"), ("고급 점수 (응용/심화)", "#EF9F27")]:
+    for col_name, color in [("A (사용 여부)", "#7F77DD"), ("B (구조/다양성)", "#1D9E75"), ("C (응용/심화)", "#EF9F27")]:
         fig_chapter.add_trace(go.Bar(
             name=col_name, x=chapter_avgs["챕터"], y=chapter_avgs[col_name],
             marker_color=color
