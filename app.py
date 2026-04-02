@@ -72,10 +72,10 @@ all_students = pd.concat([gen_students(random.randint(20, 30), cid) for cid in C
 # Streamlit 앱
 # ─────────────────────────────────────────────
 
-st.set_page_config(page_title="허밍블럭스 대시보드", layout="wide")
+st.set_page_config(page_title="대시보드", layout="wide")
 
 # 사이드바
-st.sidebar.title("허밍블럭스 대시보드")
+st.sidebar.title("대시보드")
 dashboard_mode = st.sidebar.radio("대시보드 선택", ["교사용 대시보드", "관리자용 대시보드"])
 
 # ═══════════════════════════════════════════════
@@ -377,4 +377,4 @@ elif dashboard_mode == "관리자용 대시보드":
 
 # ── 푸터 ──
 st.sidebar.divider()
-st.sidebar.caption("허밍블럭스 x 네모감성 | 데이터 스키마 v3.1 기반 프로토타입")
+st.sidebar.caption("대시보드 프로토타입")
