@@ -64,7 +64,7 @@ def gen_students(n, class_id):
     return pd.DataFrame(rows)
 
 CLASS_IDS = ["class-A", "class-B", "class-C"]
-CLASS_NAMES = {"class-A": "3학년 1반", "class-B": "3학년 2반", "class-C": "4학년 1반"}
+CLASS_NAMES = {"class-A": "허밍초등학교 3학년 1반", "class-B": "3학년 2반", "class-C": "4학년 1반"}
 
 all_students = pd.concat([gen_students(random.randint(20, 30), cid) for cid in CLASS_IDS], ignore_index=True)
 
@@ -118,7 +118,7 @@ if dashboard_mode == "교사용 대시보드":
     })
 
     fig_chapter = go.Figure()
-    for col_name, color in [("A (사용 여부)", "#7F77DD"), ("B (구조/다양성)", "#1D9E75"), ("C (응용/심화)", "#EF9F27")]:
+    for col_name, color in [("기초 점수 (사용 여부)", "#7F77DD"), ("중급 점수 (구조/다양성)", "#1D9E75"), ("고급 점수 (응용/심화)", "#EF9F27")]:
         fig_chapter.add_trace(go.Bar(
             name=col_name, x=chapter_avgs["챕터"], y=chapter_avgs[col_name],
             marker_color=color
@@ -135,11 +135,11 @@ if dashboard_mode == "교사용 대시보드":
         cdf = all_students[all_students["class_id"] == cid]
         compare_data.append({
             "반": CLASS_NAMES[cid],
-            "실행": cdf["play_total"].mean(),
-            "반복": cdf["loop_total"].mean(),
-            "조건": cdf["cond_total"].mean(),
-            "연산": cdf["op_total"].mean(),
-            "함수": cdf["func_total"].mean(),
+            "실행블록": cdf["play_total"].mean(),
+            "반복블록": cdf["loop_total"].mean(),
+            "조건블록": cdf["cond_total"].mean(),
+            "연산블록": cdf["op_total"].mean(),
+            "스타블록": cdf["func_total"].mean(),
         })
     compare_df = pd.DataFrame(compare_data)
 
